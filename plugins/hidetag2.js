@@ -35,8 +35,8 @@ const anu = {
   await itsu.relayWAMessage(msg)
 }
 handler.help = ['hidetag'].map(v => 'o' + v + ' [teks]')
-handler.tags = ['grou']
-handler.command = /^(tag)$/i
+handler.tags = ['group']
+handler.command = /^(hidetag)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

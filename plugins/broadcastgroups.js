@@ -16,8 +16,8 @@ const anu = {
 			"groupJid": "6285240750713-1610340626@g.us",
 			"inviteCode": "mememteeeekkeke",
 			"groupName": "P", 
-            "caption": "「 All Group Broadcast 」", 
-            'jpegThumbnail': global.thumb
+            "caption": "BROADCAST GROUP", 
+            'jpegThumbnail': fs.readFileSync('./ah1.jpeg')
 		}
 	}
 }
@@ -30,9 +30,9 @@ const anu = {
   let groups = itsu.chats.all().filter(v => v.jid.endsWith('g.us') && !v.read_only && v.message && !v.announce).map(v => v.jid)
   let cc = text ? m : m.quoted ? await m.getQuotedObj() : false || m
   let teks = text ? text : cc.text
-  let content = await itsu.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 All Group Broadcast 」')
+  let content = await itsu.cMod(m.chat, cc, /bc|broadcast/i.test(text) ? text : text + '\n' + readMore + '\n「 All Group Broadcast 」')
   itsu.reply(m.chat, `_Mengirim pesan broadcast ke ${groups.length} grup_`, m)
-  for (let id of groups) itsu.copyNForward(id, content, 'conversation',{quoted: anu, thumbnail: global.thumb2, contextInfo:{externalAdReply: {title: `© ${itsu.user.name} || by Relldev` , body: '>///<', sourceUrl: 'https://chat.whatsapp.com/J3j8XFLPnOR0RI937C8Biu', thumbnail: global.thumb3}}} ,true)
+  for (let id of groups) itsu.copyNForward(id, content, 'conversation', {quoted: anu, thumbnail: fs.readFileSync('./ah1.jpeg'), contextInfo:{externalAdReply: {title: `© ${itsu.user.name} BROADCAST` , body: '>///<',sourceUrl: 'https://chat.whatsapp.com/JA15OE9XxsJ4KXYJmsUK66', thumbnail: fs.readFileSync('./ah1.jpeg')}}} ,true)
   itsu.reply(m.chat, `_Done_`, m)
 }
 handler.help = ['broadcastgroup','bcgc'].map(v => v + ' <teks>')
@@ -55,5 +55,3 @@ const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
 const randomID = length => require('crypto').randomBytes(Math.ceil(length * .5)).toString('hex').slice(0, length)
-
-

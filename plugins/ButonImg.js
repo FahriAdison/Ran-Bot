@@ -19,9 +19,9 @@ let handler  = async (m, { itsu, usedPrefix: _p }) => {
 let fetch = require('node-fetch')
 let tag = `@${m.sender.split('@')[0]} 🐦`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let ow = `@${'6283820073017'.split('@')[0]}`
+ let ow = `@${'17608914335'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let pat1 = `@${'62813828362494'.split('@')[0]}`
+ let pat1 = `@${'0'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
  let pat2 = `@${'6283801499848'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
@@ -113,7 +113,7 @@ const anu = {
                             itemCount : 999999999999,
                             itemCoun : 404,
                             surface : 404,
-                            message: `© ${itsu.user.name}\nSimple WhatsApp Bot`,
+                            message: `© ${itsu.user.name}\nRecode WhatsApp Bot`,
                             orderTitle: 'B',
                             thumbnail: await (await fetch(ppBot)).buffer(), 
                             sellerJid: '0@s.whatsapp.net'
@@ -172,10 +172,11 @@ const anu = {
       'quotes': '🅀🅄🄾🅃🄴🅂',
       'admin': '🄰🄳🄼🄸🄽',
       'ᴘᴇɴᴅɪɴɢ sᴛᴜғғ': 'ᴘᴇɴᴅɪɴɢ sᴛᴜғғ',
-      'premium':'🄶🅁🄾🅄🄿',
+      'group':'🄶🅁🄾🅄🄿',
       'premium': '🄿🅁🄴🄼🄸🅄🄼',
       'internet': '🄸🄽🅃🄴🅁🄽🄴🅃',
       'nulis': '🄽🅄🄻🄸🅂 & 🄻🄾🄶🄾',
+      'sertifikat': '🅂🄴🅁🅃🄸🄵🄸🄺🄰🅃',
       'downloader': '🄳🄾🅆🄽🄻🄾🄰🄳🄴🅁',
       'tools': '🅃🄾🄾🄻🅂',
       'database': '🄰🄳🄳 🄼🄴🅂🅂🄰🄶🄴',
@@ -210,9 +211,8 @@ const anu = {
  
  ᴅᴀᴛᴇ: *%week %weton, %date*📅
  User: %totalreg
- 
+- Tukang Banned : ${pat1}
 - Creator : ${ow}
-- Partner : ${pat1}\n${pat2}\n${pat3}
 %readmore`
     let header = itsu.menu.header || ` ${moe} ┉┄┈┈┈ 『  %category  』 ┉┄┈┈┈ ` 
     let body   = itsu.menu.body   || '➠ %cmd%islimit'
@@ -254,7 +254,7 @@ const buttons = [
 {buttonId: `/owner`, buttonText: {displayText: 'owner'}, type: 1}
 ]
 const buttonsMessage = {
-    contentText: `Ｈｉ ｕｓｅｒ\nᵢₘ  ${itsu.user.name} \n\n\n- Bot group: J3j8XFLPnOR0RI937C8Biu\n\n- Github : https://github.com/Rlxfly\n\n`,
+    contentText: `Ｈｉ ｕｓｅｒ\nᵢₘ  ${itsu.user.name} \n\n\n- Bot group: \n\n- Github : https://github.com/FahriAdison\n\n`,
     footerText: text,
     buttons: buttons,
     headerType: 4,

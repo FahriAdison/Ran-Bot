@@ -20,7 +20,7 @@ const anu = {
 						"jpegThumbnail": global.thumb
 					},
 					"title": "ＵｗＵ",
-					"description": "Rlxfly",
+					"description": "Rikka",
 					"currencyCode": "USD",
 					"priceAmount1000": "999999999999",
 					"retailerId": ">//<",
@@ -32,8 +32,8 @@ const anu = {
 }
   itsu.relayWAMessage(itsu.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
-                        "title": "Ｍｅｎｕ ＴｅｓｔＢｏｔ",
-                        "description": " \n_©Rell 2021_ ",
+                        "title": "Ｍｅｎｕ Ｂｏｔ",
+                        "description": " \n_©Ran 2022_ ",
                         "buttonText": `Menu`,
                         "listType": "SINGLE_SELECT",
                         "sections": [

@@ -13,4 +13,5 @@ handler.help = ['bug', 'report'].map(v => v + ' <laporan>')
 handler.tags = ['info']
 handler.command = /^(bug|report)$/i
 
+handler.premium = true
 module.exports = handler

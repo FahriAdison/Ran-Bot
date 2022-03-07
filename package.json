@@ -32,7 +32,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.2",
+    "@adiwajshing/baileys": "^3.5.3",
     "acrcloud": "^1.4.0",
     "awesome-phonenumber": "^2.47.0",
     "brainly-scraper-v2": "^1.1.2",
@@ -48,6 +48,7 @@
     "google-it": "^1.6.2",
     "hmtai": "^2.0.7",
     "human-readable": "^0.2.1",
+    "image-to-base64": "^2.2.0",
     "image-to-pdf": "^1.0.0",
     "jsbarcode": "^3.11.4",
     "jsdom": "^16.5.1",

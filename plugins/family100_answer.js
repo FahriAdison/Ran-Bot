@@ -1,11 +1,11 @@
 const similarity = require('similarity')
-const threshold = 0.50 // semakin tinggi nilai, semakin mirip
+const threshold = 0.72 // semakin tinggi nilai, semakin mirip
 module.exports = {
     async before(m) {
-        itsu.game = itsu.game ? itsu.game : {}
+        this.game = this.game ? this.game : {}
         let id = 'family100_' + m.chat
-        if (!(id in itsu.game)) return !0
-        let room = itsu.game[id]
+        if (!(id in this.game)) return !0
+        let room = this.game[id]
         let text = m.text.toLowerCase().replace(/[^\w\s\-]+/, '')
         let isSurrender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
         if (!isSurrender) {
@@ -23,10 +23,10 @@ module.exports = {
         let caption = `
 *Soal:* ${room.soal}
 
-Terdapat *${room.jawaban.length}* jawaban${room.jawaban.find(v => v.includes('')) ? `
+Terdapat *${room.jawaban.length}* jawaban${room.jawaban.find(v => v.includes(' ')) ? `
 (beberapa jawaban terdapat spasi)
 `: ''}
-${isWin ? `*SEMUA JAWABAN TERJAWAB*`: isSurrender ? '*MENYERAH!*' : ''}
+${isWin ? `*SEMUA JAWABAN TERJAWAB*` : isSurrender ? '*MENYERAH!*' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
             return isSurrender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
         }).filter(v => v).join('\n')}
@@ -35,12 +35,12 @@ ${isSurrender ? '' : `+${room.winScore} XP tiap jawaban benar`}
     `.trim()
         m.reply(caption, null, {
             contextInfo: {
-                mentionedJid: itsu.parseMention(caption)
+                mentionedJid: this.parseMention(caption)
             }
         }).then(msg => {
-            return itsu.game[id].msg = msg
-        })
-        if (isWin || isSurrender) delete itsu.game[id]
+            return this.game[id].msg = msg
+        }).catch(_ => _)
+        if (isWin || isSurrender) delete this.game[id]
         return !0
     }
 }

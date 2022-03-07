@@ -20,13 +20,14 @@ function kyun(seconds){
 }
 					runtime = process.uptime()
 					teks = `${kyun(runtime)}`
-global.owner = ['6283820073017','62813828362494', '6287827659529', '919089248348','12135998445', '6288708344182', '0' ] // Put your number here
-global.fake = ['6283820073017', '6281382836249', '6289681378568', '62813828362494', '6283801499848']
-global.fakeNum = ['6283820073017', '6281382836249', '6289681378568', '62813828362494', '6283801499848', '6283820073017','62813828362494', '6287827659529', '919089248348','12135998445', '0' ]
+global.owner = ['17608914335', '0' ] // Put your number here
+global.fake = ['17608914335']
+global.fakeNum = ['17608914335','0' ]
 global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
+  lol: 'https://api.lolhuman.xyz',
   nrtm: 'https://nurutomo.herokuapp.com',
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
@@ -38,6 +39,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
+  'https://api.lolhuman.xyz': 'KingOfBear',
   'https://api.xteam.xyz': 'd37372311698ed1d',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'Nyarlathotep',
@@ -47,11 +49,14 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname =  `Simple WhatsApp Bot`
-global.author = `@Rlxfly`
+global.packname =  `Ran`
+global.author = `Mitake`
+global.wait = 'Subscribe Ya\n bit.ly/Papah-Chan'
+global.dga = 'Jika Ingin Membeli Limit\nSilahkan Ketik #buy 1'
 global.thumb = tum
 global.thumb2 = tum2
 global.thumb3 = tum3
+global.wm = `©Ran`
 
 global.runtime = teks
 global.multiplier = 69 // The higher, The harder levelup

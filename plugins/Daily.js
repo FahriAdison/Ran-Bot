@@ -1,22 +1,23 @@
 let { MessageType } = require('@adiwajshing/baileys')
-let handler  = async (m, { itsu, usedPrefix, DevMode}) => {
-    let user = global.DATABASE._data.users[m.sender]
+
+let handler = async (m, { itsu }) => {
+    let user = global.DATABASE.data.users[m.sender]
     let __timers = (new Date - user.lastclaim)
     let _timers = (86400000 - __timers)
     let timers = clockString(_timers) 
     if (new Date - user.lastclaim > 86400000) {
-        itsu.reply(m.chat, `Anda sudah mengklaim dan mendapatkan 10 limit`, m)
-        global.DATABASE._data.users[m.sender].limit += 10
-        
-        global.DATABASE._data.users[m.sender].lastclaim = new Date * 1
+        itsu.reply(m.chat, `Anda sudah mengklaim dan mendapatkan 5000 💵money dan 3 potion`, m)
+        global.DATABASE.data.users[m.sender].money += 5000
+        global.DATABASE.data.users[m.sender].potion += 3
+        global.DATABASE.data.users[m.sender].lastclaim = new Date * 1
     } else {
         let buttons = button(`silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim lagi`, user)
         itsu.sendMessage(m.chat, buttons, MessageType.buttonsMessage, { quoted: m })
     }
 }
-handler.help = ['daily']
-handler.tags = ['main']
-handler.command = /^(daily)$/i
+handler.help = ['claim']
+handler.tags = ['rpg']
+handler.command = /^(claim|daily)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -50,14 +51,14 @@ function button(teks, user) {
     let weekly = new Date - user.lastweekly > 604800000
     console.log({claim, monthly, weekly})
     
-    if (monthly) buttons.push({buttonId: `/owner`, buttonText: {displayText: 'menu'}, type: 1})
-    if (weekly) buttons.push({buttonId: `/menu`, buttonText: {displayText: 'menu'}, type: 1})
-    if (claim) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '-menu'}, type: 1})
+    if (monthly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '/monthly'}, type: 1})
+    if (weekly) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '/weekly'}, type: 1})
+    if (claim) buttons.push({buttonId: `id${buttons.length + 1}`, buttonText: {displayText: '/claim'}, type: 1})
     if (buttons.length == 0) throw teks
     
     const buttonMessage = {
         contentText: teks,
-        footerText: 'Rell',
+        footerText: '©games-wabot',
         buttons: buttons,
         headerType: 1
     }
