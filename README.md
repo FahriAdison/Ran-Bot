@@ -1,7 +1,7 @@
 <p align="center">
     <img src="https://telegra.ph/file/cc5ce3e7cf934ea8268af.jpg" width="50%" height="50%" alt="Relldev"/>
     <br>
-    <a href="https://github.com/Rlxfly"><img title="Created by" src="https://img.shields.io/badge/Creator-Relldev-green?style=for-the-badge&logo=github"></a>
+    <a href="https://github.com/Rlxfly"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-green?style=for-the-badge&logo=github"></a>
 </p>
 
 # RECODE WABOT-AQ
@@ -50,8 +50,8 @@ Need 2 hp untuk scan qr code
 6. apt install nodejs -y
 7. apt install ffmpeg -y
 8. apt install imagemagick -y
-9. git clone https://github.com/Rlxfly/bot-tzy
-10. cd bot-tzy
+9. git clone https://github.com/FahriAdison/Ran-Bot
+10. cd Ran-Bot
 11. bash install.sh
 12. npm i cfonts
 13. npm install
@@ -67,8 +67,8 @@ apt install git -y
 apt install nodejs -y
 apt install ffmpeg -y
 apt install imagemagick -y
-git clone https://github.com/Rlxfly/bot-tzy
-cd bot-tzy
+git clone https://github.com/FahriAdison/Ran-Bot
+cd Ran-Bot
 bash install.sh
 npm i cfonts
 npm install
@@ -78,7 +78,7 @@ npm update
 ```bash
 apt update && apt upgrade
 apt install git -y
-git clone https://github.com/Rlxfly/bot-tzy
+git clone https://github.com/FahriAdison/Ran-Bot
 bash install.sh
 ```
 ---------
@@ -91,7 +91,7 @@ bash install.sh
 * Download And Install ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/Rlxfly/bot-tzy
+git clone https://github.com/FahriAdison/Ran-Bot
 cd bot-tzy
 npm install
 npm update
