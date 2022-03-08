@@ -1,7 +1,7 @@
 {
-  "name": "BotTzy",
+  "name": "Ran-Bot",
   "version": "1.05",
-  "description": "Edited bot WhatsApp",
+  "description": "Recode bot WhatsApp",
   "depecrated": false,
   "main": "index.js",
   "directories": {
