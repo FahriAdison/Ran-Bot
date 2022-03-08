@@ -8,7 +8,7 @@ let handler = async (m, { text }) => {
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.thumbnail.genius) throw json
-  conn.sendFile(m.chat, json.thumbnail.genius, '', `
+  itsu.sendFile(m.chat, json.thumbnail.genius, '', `
 ┏┉⌣ ┈ ̥- ̶ ̯ ͡.. ̷ ̴✽ ̶┄┈┈┈┈┈┈┈┈┈┈┉┓
 ┆    *${json.title}*
 └┈┈┈┈┈┈┈┈┈┈┈⌣ ┈ ̥- ̶ ̯ ͡.. ̷ ̴✽ ̶⌣ ✽ ̶
