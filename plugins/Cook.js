@@ -74,7 +74,7 @@ break
                        } else itsu.reply(m.chat, `Stok buruan mu tidak cukup untuk dimasak`, m)
 break
                 default:
-                    return itsu.sendButton( m.chat, cook, wm, `Makan`, `.eat ayamb 1`)
+                    return itsu.sendButton( m.chat, cok, wm, `Makan`, `.eat ayamb 1`)
             }
         }
     } catch (e) {
