@@ -74,7 +74,7 @@ Burning fire +
             global.DATABASE.data.users[m.sender].kayu -= 10
             global.DATABASE.data.users[m.sender].iron -= 2
             global.DATABASE.data.users[m.sender].string -= 20
-            global.DATABASE.data.users[m.sender].fishingrod += 1
+            global.DATABASE.data.users[m.sender].pancing += 1
             global.DATABASE.data.users[m.sender].fishingroddurability += 999
             m.reply("Sukses membuat 1 Pancingan 🎣")
             break
