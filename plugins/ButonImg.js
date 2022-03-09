@@ -166,6 +166,7 @@ const anu = {
       'main': '🄼🄰🄸🄽',
        'rpg': '🅁🄿🄶',
       'game': '🄶🄰🄼🄴',
+      'anime': '🄰🄽🄸🄼🄴',
       'xp': '🄴🅇🄿 & 🄻🄸🄼🄸🅃',
       'sticker': '🅂🅃🄸🄲🄺🄴🅁',
       'kerang': '🄺🄴🅁🄰🄽🄶 🄰🄹🄰🄸🄱',
@@ -249,9 +250,9 @@ let img = global.thumb2
 const thumb = fs.readFileSync('./sis.jpeg')
 let msg = await itsu.prepareMessage("0@s.whatsapp.net", img, "imageMessage", {thumbnail: thumb})
 const buttons = [
-{buttonId: `/sc`, buttonText: {displayText: 'sc'}, type: 1},
-
-{buttonId: `/owner`, buttonText: {displayText: 'owner'}, type: 1}
+{buttonId: `/sc`, buttonText: {displayText: 'SC'}, type: 1},
+{buttonId: `/github`, buttonText: {displayText: 'MY GITHUB'}, type: 1},
+{buttonId: `/owner`, buttonText: {displayText: 'MY OWNER'}, type: 1}
 ]
 const buttonsMessage = {
     contentText: `Ｈｉ ｕｓｅｒ\nᵢₘ  ${itsu.user.name} \n\n\n- Bot group: https://chat.whatsapp.com/JA15OE9XxsJ4KXYJmsUK66 \n\n- Github : https://github.com/FahriAdison\n\n`,
