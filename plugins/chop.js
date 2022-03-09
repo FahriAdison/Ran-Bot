@@ -43,7 +43,7 @@ let handler = async (m, { itsu, usedPrefix, DevMode }) => {
 and you got Additional gifts
 💎diamond: ${diamond}
 `.trim()
-            itsu.senDATABASEutton(m.chat, str, wm, 'INVENTORY', '#inv', m)
+            itsu.sendButton(m.chat, str, wm, 'INVENTORY', '#inv', m)
             global.DATABASE.data.users[m.sender].kayu += kayu * 1
             global.DATABASE.data.users[m.sender].diamond += diamond * 1
             global.DATABASE.data.users[m.sender].batu += batu * 1
