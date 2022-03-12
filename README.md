@@ -1,7 +1,7 @@
 <p align="center">
     <img src="https://pbs.twimg.com/media/Ee_JQ7-WAAEbZ4V.jpg" width="50%" height="50%" alt="Yuta"/>
     <br>
-    <a href="https://github.com/FahriAdison"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-red?style=for-the-badge&logo=github"></a>
+    <a href="https://github.com/FahriAdison"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-magenta?style=for-the-badge&logo=github"></a>
 </p>
 
 # RECODE WABOT-AQ
