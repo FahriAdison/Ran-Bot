@@ -1,6 +1,25 @@
 
 let path = require('path')
 let fs = require('fs')
+let moment = require('moment-timezone')
+let d = new Date(new Date + 3600000)
+let locale = 'id'
+let week = d.toLocaleDateString(locale, { weekday: 'long' })
+let date = d.toLocaleDateString(locale, {
+day: 'numeric',
+month: 'long',
+year: 'numeric'
+})
+
+let time = d.toLocaleTimeString(locale, {
+hour: 'numeric',
+minute: 'numeric',
+second: 'numeric'
+})
+
+function pickRandom(list) {
+  return list[Math.floor(Math.random() * list.length)]
+}
 let tum = fs.readFileSync('./src/elaina2.jpeg')
 let tum2 = fs.readFileSync('./src/emror.jpeg')
 let tum3 = fs.readFileSync('./ah1.jpeg')
@@ -39,7 +58,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.lolhuman.xyz': 'KingOfBear',
+  'https://api.lolhuman.xyz': 'Deffbotz',
   'https://api.xteam.xyz': 'd37372311698ed1d',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'Nyarlathotep',
@@ -49,6 +68,8 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
+global.botwm = `©Ran_2022`//UBAH JADI NAMAMU
+global.botdate = `╭──────────═┅═─────────\n│◪ ${time}\n┊◪ ${week} ${date}\n╰──────────═┅═─────────`
 global.packname =  `Ran`
 global.author = `Mitake`
 global.wait = 'Subscribe Ya\n bit.ly/Papah-Chan'
