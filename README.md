@@ -92,7 +92,7 @@ bash install.sh
 
 ```bash
 git clone https://github.com/FahriAdison/Ran-Bot
-cd bot-tzy
+cd Ran-Bot
 npm install
 npm update
 ```
