@@ -218,7 +218,6 @@ this.updatePresence(m.chat, Presence.composing)
             if (!isNumber(user.lastIstigfar)) user.lastIstigfar = 0
             if (!isNumber(user.lastturu)) user.lastturu = 0
             if (!isNumber(user.lastseen)) user.lastseen = 0
-            if (!isNumber(user.as)) user.as = 0
             if (!isNumber(user.lastbansos)) user.lastbansos = 0
             if (!isNumber(user.lastrampok)) user.lastrampok = 0
             if (!('registered' in user)) user.registered = false
