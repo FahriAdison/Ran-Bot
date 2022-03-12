@@ -1,7 +1,7 @@
 <p align="center">
-    <img src="https://telegra.ph/file/cc5ce3e7cf934ea8268af.jpg" width="50%" height="50%" alt="Relldev"/>
+    <img src="https://pbs.twimg.com/media/Ee_JQ7-WAAEbZ4V.jpg" width="50%" height="50%" alt="Relldev"/>
     <br>
-    <a href="https://github.com/Rlxfly"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-green?style=for-the-badge&logo=github"></a>
+    <a href="https://github.com/Rlxfly"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-Magenta?style=for-the-badge&logo=github"></a>
 </p>
 
 # RECODE WABOT-AQ
@@ -22,7 +22,7 @@ Simple WhatsApp Bot
 - [x] Custom Quality YouTube video <details><summary>Screenshot</summary><img src="https://telegra.ph/file/9138a798168e5186278c1.jpg"></details>
 ------------------
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rlxfly/bot-tzy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/FahriAdison/Ran-Bot)
  
 
 # Group for user
