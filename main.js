@@ -107,7 +107,7 @@ if (opts['test']) {
     process.send(line.trim())
   })
   itsu.connect().then(() => {
-    itsu.sendMessage('17608914335@c.us', 'Bot Telah Tersambung', 'conversation');
+    itsu.sendMessage('6285272821627@c.us', 'Bot Telah Tersambung', 'conversation');
        fs.writeFileSync(authFile, JSON.stringify(itsu.base64EncodedAuthInfo(), null, '\t'))
        global.timestamp.connect = new Date
      })
