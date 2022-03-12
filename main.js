@@ -107,10 +107,11 @@ if (opts['test']) {
     process.send(line.trim())
   })
   itsu.connect().then(() => {
-    fs.writeFileSync(authFile, JSON.stringify(itsu.base64EncodedAuthInfo(), null, '\t'))
-    global.timestamp.Connect = new Date
-  })
-}
+    itsu.sendMessage('17608914335@c.us', 'Bot Telah Tersambung', 'conversation');
+       fs.writeFileSync(authFile, JSON.stringify(itsu.base64EncodedAuthInfo(), null, '\t'))
+       global.timestamp.connect = new Date
+     })
+   }
 process.on('uncaughtException', console.error)
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/
 
