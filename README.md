@@ -1,7 +1,7 @@
 <p align="center">
     <img src="https://pbs.twimg.com/media/Ee_JQ7-WAAEbZ4V.jpg" width="50%" height="50%" alt="Yuta"/>
     <br>
-    <a href="https://github.com/Rlxfly"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-Blue-Magenta?style=for-the-badge&logo=github"></a>
+    <a href="https://github.com/FahriAdison"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-Blue?style=for-the-badge&logo=github"></a>
 </p>
 
 # RECODE WABOT-AQ
@@ -9,7 +9,7 @@
 Simple WhatsApp Bot
 
 <p align="center">
-  <a href="https://github.com/Rlxfly"><img src="http://readme-typing-svg.herokuapp.com?color=FF00FF&center=true&vCenter=true&multiline=false&lines=Simple+Whatsapp+Bot;Base+ori+by+Nurutomo;Sc+Ori+By+Rlxfly;Recode+By+Yuta;Just Updated;Give+star+and+forks+this+repo+:)" alt="UwU">
+  <a href="https://github.com/Rlxfly"><img src="http://readme-typing-svg.herokuapp.com?color=233067&center=true&vCenter=true&multiline=false&lines=Simpel+Bot+WhatsApp;Base+ori+by+Nurutomo;Sc+Ori+By+Rlxfly;Recode+By+Yuta;Just+Updated;Give+star+and+forks+this+repo+:)" alt="UwU">
 </p>
 
 ### Preview bot
