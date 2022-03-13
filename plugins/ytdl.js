@@ -52,9 +52,9 @@ await itsu.relayWAMessage(itsu.prepareMessageFromContent(m.chat, {
                  }, {quoted: m}),{waitForAck: true}
 )
 }
-handler.help = ['ytmp3', 'ytmp4', 'yta', 'ytv']
+hhandler.help = ['mp4', 'mp3', 'v','a'].map(v => 'yt' + v + a + ` <url> [server: ${servers.join(', ')}]`)
 handler.tags = ['downloader']
-handler.command = /^ytdl$/i
+handler.command = /^yt(v|mp4|a|mp3)?$/i
 
 handler.limit = true
 
