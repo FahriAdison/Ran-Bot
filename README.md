@@ -20,6 +20,7 @@ Simple WhatsApp Bot
 - [x] Menu 2 <details><summary>Screenshot</summary><img src="https://telegra.ph/file/153200888eea7c4173133.jpg"></details>
 - [x] Eval <details><summary>Screenshot</summary><img src="https://telegra.ph/file/844516c6c157b6bcd35fb.jpg"></details>
 - [x] Custom Quality YouTube video <details><summary>Screenshot</summary><img src="https://telegra.ph/file/9138a798168e5186278c1.jpg"></details>
+
 ------------------
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/FahriAdison/Ran-Bot)
@@ -117,4 +118,5 @@ node .
 ---------
   
   
-  # Thanks if you use this source code >//<
+  ## Req fitur ke
+* [`</>`](https://wa.me/13062221260?text=Banh+req+fitur) 
