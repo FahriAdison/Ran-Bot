@@ -3,10 +3,11 @@ let fetch = require('node-fetch')
 let PhoneNumber = require('awesome-phonenumber')
 let handler = async (m, { itsu, usedPrefix, text }) => {
 let date = global.botdate
-let gambar = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=INVENTORY'
     let { registered, age, lastrampok, lastdagang, lastcodereg, lastberkebon, lasthourly, lastberburu, lastbansos, lastadventure, lastfishing, lastwar, lastduel, lastmining, lastdungeon, lastclaim, lastweekly, lastmonthly } = global.DATABASE.data.users[m.sender]
 
     let healt = global.DATABASE.data.users[m.sender].healt
+    let lapar = global.DATABASE.data.users[m.sender].laper
+    let haus = global.DATABASE.data.users[m.sender].haus
     let usrname = global.DATABASE.data.users[m.sender].name
     let stamina = global.DATABASE.data.users[m.sender].stamina
     let armor = global.DATABASE.data.users[m.sender].armor 
@@ -143,214 +144,185 @@ let gambar = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=tr
     let orca = global.DATABASE.data.users[m.sender].orca
     
     let number = `${PhoneNumber('+' + pasangan.replace('@s.whatsapp.net', '')).getNumber('international')}`
-    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? itsu.user.jid : pasangan
-    let num2 = itsu.getName(pasangan)
+    let namapsng = itsu.getName(pasangan)
     let pp = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=Inventory'
+    const ftrol = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 2022,
+    status: 1,
+    surface : 1,
+    message: `Hai Kak ${usrname}!`, 
+    orderTitle: `▮Menu ▸`,
+    thumbnail: await (await fetch('https://cdn.anisearch.com/images/character/cover/full/83/83046.webp')).buffer(), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    }
+    }
     let str = `
-*╭───────[ Status ]────────✧*
-├◪ 📡 *Status:* ${premium ? "Premium": "Free"}
-├◪ 📇 *Name:* ${usrname} 
-├◪ 💌 *Pasangan:* ${pasangan ? num2 : '❌'}
-├◪ ❤️️ *Health:* ${healt}
-├◪ 🍸 *Stamina:* ${stamina}
-├◪ 💹 *Money:* ${money} 💲
-├◪ 💳 *Bank:* ${atm} 💲
-├◪ 📊 *Level:* ${level}
-├◪ ✨ *Exp:* ${exp}
-├◪ 📍 *Role:* ${role}
-├◪ 🎫 *Limit:* ${limit}
-├◪ ${registered ? '🎨 *Age:* ' + age : ''}
-*╰─────────────────────·····*
-
-*╭────────[ Tools ]─────────✧*
-├◪ 🛡️ *Armor:* ${armor == 0 ? '❌' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}
-├◪ ⚔️ *Sword:* ${sword == 0 ? '❌' : '' || sword == 1 ? 'wooden sword' : '' || sword == 2 ? 'Iron sword' : '' || sword == 3 ? 'Gold sword' : '' || sword == 4 ? 'Diamond sword' : '' || sword > 0 && sword < 5 ? `Ketahanan (*${_sword}* / *${sword *100}*)` : '' || sword == 5 ? '*Netherite Sword*' : ''}
-├◪ ╰ *Durability:* ${sdurability}
-├◪ ⛏️ *Pickaxe:* ${pickaxe == 0 ? '❌' : '' || pickaxe == 1 ? 'wooden pickaxe' : '' || pickaxe == 2 ? 'Iron pickaxe' : '' || pickaxe == 3 ? 'Gold pickaxe' : '' || pickaxe == 4 ? 'Diamond pickaxe' : '' || pickaxe == 5 ? 'Netherite pickaxe' : ''}
-├◪ ╰ *Durability:* ${pdurability}
-├◪ 🎣 *Fishingrod:* ${pancing == 0 ? '❌' : '' || pancing == 1 ? 'kail pancing kayu' : '' }
-├◪ ╰ *Durability:* ${fdurability}
-*╰──────────────────────·····*
-
-*╭───────[ Kandang ]────────✧*
-├◪ 🐔 *Ayam:* ${ayam}    
-├◪ 🐐 *Kambing:* ${kambing}
-├◪ 🐄 *Sapi:* ${sapi} 
-├◪ 🐃 *Kerbau:* ${kerbau}
-├◪ 🐖 *Babi:* ${babi}    
-├◪ 🐅 *Harimau:* ${harimau}
-├◪ 🐂 *Banteng:* ${banteng} 
-├◪ 🐒 *Monyet:* ${monyet}
-├◪ 🐗 *Babi Hutan:* ${babihutan}
-├◪ 🐼 *Panda:* ${panda}
-├◪ 🐘 *Gajah:* ${gajah}
-├◪ 🐊 *Buaya:* ${buaya}
-│
-│ 🥢 Bisa kamu masak */masak ayamb*
-├───────────────────────◪
-├◪ 💬 *Total Hewan:* ${ buaya + gajah + panda + babihutan + monyet + harimau + kerbau + kambing + ayam + sapi + babi + banteng } tangkapan
-*╰───────────────────────·····*
-
-*╭────────[ Kolam ]─────────✧*
-├◪ 🐋 *Orca:* ${orca}
-├◪ 🐳 *Paus:* ${paus}
-├◪ 🐬 *Lumba:* ${lumba}
-├◪ 🦈 *Hiu:* ${hiu}
-├◪ 🐟 *Ikan:* ${ikan}
-├◪ 🐟 *Lele:* ${lele}
-├◪ 🐡 *Bawal:* ${bawal}
-├◪ 🐠 *Nila:* ${nila}
-├◪ 🦀 *Kepiting:* ${kepiting}
-├◪ 🦞 *Lobster:* ${lobster}
-├◪ 🐙 *Gurita:* ${gurita}
-├◪ 🦑 *Cumi:* ${cumi}
-├◪ 🦐 *Udang:* ${udang}
-├───────────────────────◪
-├◪ 💬 *Total Ikan:* ${orca + udang + hiu + lobster + lumba + cumi + gurita + kepiting + paus + nila + bawal + ikan + lele + psepick + psenjata }
-*╰───────────────────────·····*
-
-*╭───────[ Inventory ]────────✧*
-├◪ 💎 *Diamond:* ${diamond}
-├◪ 🧪 *Ramuan:* ${ramuan}
-├◪ 🥤 *Potion:* ${potion}
-├◪ 🗑️ *Sampah:* ${sampah}
-├◪ 🥫 *Kaleng:* ${kaleng}
-├◪ 📦 *Kardus:* ${kardus}
-├◪ 🪵  *Kayu:* ${kayu}
-├◪ 🕸️ *String:* ${string}
-├◪ 🪙  *Gold:* ${emas}
-├◪ ⛓  *Iron:* ${besi}
-├◪ 🪨  *Batu:* ${batu}
-├◪ 🧭 *Arloji:* ${arlok}
-*╰───────────────────────·····*
-
-
-*╭────────[ Food ]─────────✧*
-├◪ 🥩 *FoodPet :* ${makananpet}
-├◪ 🥩 *Food Griffin:* ${makanangriffin}
-├◪ 🥩 *Food Kyubi:* ${makanankyubi}
-├◪ 🥩 *Food Centaur:* ${makanancentaur}
-├───────────────────────◪
-├◪ 🍖 *ayam bakar:* ${ayamb}
-├◪ 🍗 *ayam goreng:* ${ayamg}
-├◪ 🍖 *Rendang Sapi :* ${sapir}
-├◪ 🍢 *steak sapi:* ${ssapi}
-├◪ 🍶 *Aqua:* ${aqua}
-├───────────────────────◪
-├◪ 🎒 *Total inv:* ${aqua + ramuan + kardus + kaleng + arlok + psepick + psenjata + common + uncommon + mythic + legendary + pet + diamond + potion + besi + emas + string + sampah + kayu + batu + potion + sampah + makananpet + apel + ayamb + ayamg + sapir + ssapi } item
-*╰───────────────────────·····*
-
-*╭──────[ Fruit & Seed ]───────✧*
-├◪ 🥭 *Mangga:* ${mangga}
-├◪ 🍇 *Anggur:* ${anggur}
-├◪ 🍌 *Pisang:* ${pisang}
-├◪ 🍊 *Jeruk:* ${jeruk}
-├◪ 🍎 *Apel:* ${apel}
-├───────────────────────◪
-├◪ 🌾 *Bibit Mangga:* ${bibitmangga}
-├◪ 🌾 *Bibit Anggur:* ${bibitanggur}                                    
-├◪ 🌾 *Bibit Pisang:* ${bibitpisang}
-├◪ 🌾 *Bibit Jeruk:* ${bibitjeruk}
-├◪ 🌾 *Bibit Apel:* ${bibitapel}
-*╰───────────────────────·····*
-
-*╭────────[ Crate ]─────────✧*
-├◪ 📦 *Common:* ${common}
-├◪ 🛍️ *Uncommon:* ${uncommon}
-├◪ 🎁 *Mythic:* ${mythic}
-├◪ 🧰 *Legendary:* ${legendary}
-├◪ 📫 *Pet:* ${pet}
-├◪ ✉️ *Chest Weapons epick:* ${psepick} item
-├◪ ✉️ *Chest Weapons:* ${psenjata} item
-*╰───────────────────────·····*
-
-
-*╭─────────[ Pet ]──────────✧*
-├◪ 🐴 *Kuda:* ${kuda == 0 ? '❌' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level MAX' : ''}
-├◪ 🦊 *Rubah:* ${rubah == 0 ? '❌' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level MAX' : ''}
-├◪ 🐱 *Kucing:* ${kucing == 0 ? '❌' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level MAX' : ''}
-├◪ 🐉 *Naga:* ${naga == 0 ? '❌' : '' || naga == 1 ? 'Level 1' : '' || naga == 2 ? 'Level 2' : '' || naga == 3 ? 'Level 3' : '' || naga == 4 ? 'Level 4' : '' || naga == 5 ? 'Level MAX' : ''}
-├◪ 🦜 *Phonix:* ${phonix == 0 ? '❌' : '' || phonix == 1 ? 'Level 1' : '' || phonix == 2 ? 'Level 2' : '' || phonix == 3 ? 'Level 3' : '' || phonix == 4 ? 'Level 4' : '' || phonix == 5 ? 'Level MAX' : ''}
-├◪ 🐎 *Centaur:* ${centaur == 0 ? '❌' : '' || centaur == 1 ? 'Level 1' : '' || centaur == 2 ? 'Level 2' : '' || centaur == 3 ? 'Level 3' : '' || centaur == 4 ? 'Level 4' : '' || centaur == 5 ? 'Level MAX' : ''}
-├◪ 🦅 *Griffin:* ${griffin == 0 ? '❌' : '' || griffin == 1 ? 'Level 1' : '' || griffin == 2 ? 'Level 2' : '' || griffin == 3 ? 'Level 3' : '' || griffin == 4 ? 'Level 4' : '' || griffin == 5 ? 'Level MAX' : ''}
-├◪ 🐺 *Serigala:* ${serigala == 0 ? '❌' : '' || serigala == 1 ? 'Level 1' : '' || serigala == 2 ? 'Level 2' : '' || serigala == 3 ? 'Level 3' : '' || naga == 4 ? 'Level 4' : '' || serigala == 5 ? 'Level MAX' : ''}
-*╰───────────────────────·····*
-
-
-*╭────────[ Progses ]─────────✧*
-│╭────────────────
-││ 📊 *Level:* ${level} ➠  ${level + 1}
-││ ✨ *Exp:* ${exp} ➠ ${max}
-│╰────────────────
-│╭────────────────
-││🦊 *Rubah :* ${rubah == 0 ? '❌' : '' || rubah > 0 && rubah < 5 ? `Level *${rubah}* ➠ *${rubah + 1}*\n││Exp *${_rubah}* -> *${rubah *100}*` : '' || rubah == 5 ? '*Max Level*' : ''}
-│╰────────────────
-│╭────────────────
-││🐱 *Kucing :* ${kucing == 0 ? '❌' : '' || kucing > 0 && kucing < 5 ? `Level *${kucing}* ➠ *${kucing + 1}*\n││Exp *${_kucing}* -> *${kucing *100}*` : '' || kucing == 5 ? '*Max Level*' : ''}
-│╰────────────────
-│╭────────────────
-││🐴 *Kuda :* ${kuda == 0 ? '❌' : '' || kuda > 0 && kuda < 5 ? `Level *${kuda}* ➠ *${kuda + 1}*\n││Exp *${_kuda}* -> *${kuda *100}*` : '' || kuda == 5 ? '*Max Level*' : ''}
-│╰────────────────
-│╭────────────────
-││🐉 *Naga :* ${naga == 0 ? '❌' : '' || naga > 0 && naga < 5 ? `Level *${naga}* ➠ *${naga + 1}*\n││Exp *${_naga}* -> *${naga *100}*` : '' || naga == 5 ? '*Max Level*' : ''}
-│╰────────────────
-│╭────────────────
-││🦜 *Phonix :* ${phonix == 0 ? '❌' : '' || phonix > 0 && phonix < 5 ? `Level *${phonix}* ➠ *${phonix + 1}*\n││Exp *${_phonix}* -> *${phonix *100}*` : '' || phonix == 5 ? '*Max Level*' : ''}
-│╰────────────────
-│╭────────────────
-││🐎 *Centaur :* ${centaur == 0 ? '❌' : '' || centaur > 0 && centaur < 5 ? `Level *${centaur}* ➠ *${centaur + 1}*\n││Exp *${_centaur}* -> *${centaur *100}*` : '' || centaur == 5 ? '*Max Level*' : ''}
-│╰────────────────
-│╭────────────────
-││🦅 *Griffin :* ${griffin == 0 ? '❌' : '' || griffin > 0 && griffin < 5 ? `Level *${griffin}* ➠ *${griffin + 1}*\n││Exp *${_griffin}* -> *${griffin *100}*` : '' || griffin == 5 ? '*Max Level*' : ''}
-│╰────────────────
-│╭────────────────
-││🐺 *Serigala :* ${serigala == 0 ? '❌' : '' || serigala > 0 && serigala < 5 ? `Level *${serigala}* ➠ *${serigala + 1}*\n││Exp *${_serigala}* -> *${serigala *100}*` : '' || serigala == 5 ? '*Max Level*' : ''}
-│╰────────────────
-*╰───────────────────────·····*
-
-
-*╭────────[ Cooldown ]─────────✧*
-├◪ *Berburu :* ${lastberburu > 0 ? '❌' : '✅'}
-├◪ *Memancing :* ${lastfishing > 0 ? '❌' : '✅'}
-├◪ *Adventure :* ${lastadventure > 0 ? '❌' : '✅'}
-├◪ *Duel :* ${lastduel > 0 ? '❌' : '✅'}
-├◪ *War :* ${lastwar > 0 ? '❌'  : '✅'}
-├◪ *Dungeon :* ${lastdungeon > 0 ? '❌' : '✅'}
-├◪ *Berdagang :* ${lastdagang > 0 ? '❌'  : '✅'}
-├◪ *Berkebun :* ${lastberkebon > 0 ? '❌'  : '✅'}
-├◪ *CodeReg :* ${lastcodereg > 0 ? '❌'  : '✅'}
-├◪ *Rampok :* ${lastrampok > 0 ? '❌'  : '✅'}
-├◪ *Mining :* ${lastmining > 0 ? '❌' : '✅'}
-├◪ *Fishing :* ${lastfishing > 0 ? '❌'  : '✅'}
-├◪ *Bansos :* ${lastbansos > 0 ? '❌' : '✅'}
-├◪ *Hourly :* ${lasthourly > 0 ? '❌' : '✅'}
-├◪ *Claim :* ${lastclaim > 0 ? '❌' : '✅'}
-├◪ *Weekly :* ${lastweekly > 0 ? '❌' : '✅'}
-├◪ *Monthly :* ${lastmonthly > 0 ? '❌' : '✅'}
-*╰───────────────────────·····*
-
-
-*╭───────[ Achievement ]────────✧*
-├◪ Top 📊 level *${userslevel.indexOf(m.sender) + 1}* dari *${userslevel.length}*
-├◪ Top 💹 Money *${usersmoney.indexOf(m.sender) + 1}* dari *${usersmoney.length}*
-├◪ Top 🪙 Gold *${usersgold.indexOf(m.sender) + 1}* dari *${usersgold.length}*
-├◪ Top 💎 Diamond *${usersdiamond.indexOf(m.sender) + 1}* dari *${usersdiamond.length}*
-├◪ Top 🧭 Arloji *${usersarlok.indexOf(m.sender) + 1}* dari *${usersarlok.length}*
-├◪ Top 🥤 Potion *${userspotion.indexOf(m.sender) + 1}* dari *${userspotion.length}*
-├◪ Top 📦 Common *${userscommon.indexOf(m.sender) + 1}* dari *${userscommon.length}*
-├◪ Top 🛍️ Uncommon *${usersuncommon.indexOf(m.sender) + 1}* dari *${usersuncommon.length}*
-├◪ Top 🎁 Mythic *${usersmythic.indexOf(m.sender) + 1}* dari *${usersmythic.length}*
-├◪ Top 🧰 Legendary *${userslegendary.indexOf(m.sender) + 1}* dari *${userslegendary.length}*
-├◪ Top 🗑️ Sampah *${userssampah.indexOf(m.sender) + 1}* dari *${userssampah.length}*
-*╰───────────────────────·····*
-
-${readMore}
-⚠️ *Warn:* ${warn}
+*──────────❏ Status ❏──────────*
+📡 *Status:* ${premium ? "Premium": "Free"} User
+📇 *Name:* ${usrname} 
+💌 *Pasangan:* ${ pasangan ? namapsng : '❌'}
+❗ *Warn:* ${warn}
 ⛔ *Banned:* No
-`.trim()
-    mentionedJid: [number]
-    itsu.send2ButtonLoc(m.chat, gambar, str, wm, `⋮☰ BACK`, `.menu`, `SHOP`, `.shop`, m)
-    itsu.reply(str)
+❤️️ *Health:* ${healt}
+⚡ *Stamina:* ${stamina}
+💹 *Money:* $${money}
+💳 *Bank:* $${atm}
+📊 *Level:* ${level}
+✨ *Exp:* ${exp}
+📍 *Role:* ${role}
+🎫 *Limit:* ${limit}
+${registered ? '🎨 *Age:* ' + age : ''}
+*──────────❏ Tools ❏──────────*
+🥼 *Armor:* ${armor == 0 ? '❌' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}
+⚔️ *Sword:* ${sword == 0 ? '❌' : '' || sword == 1 ? 'wooden sword' : '' || sword == 2 ? 'Stone sword' : '' || sword == 3 ? 'Iron sword' : '' || sword == 4 ? 'Diamond sword' : '' || sword > 0 && sword < 5 ? `Ketahanan (*${_sword}* / *${sword *100}*)` : '' || sword == 5 ? '*Netherite Sword*' : ''}
+╰ *Durability:* ${sdurability}
+⛏️ *Pickaxe:* ${pickaxe == 0 ? '❌' : '' || pickaxe == 1 ? 'wooden pickaxe' : '' || pickaxe == 2 ? 'stone pickaxe' : '' || pickaxe == 3 ? 'Iron pickaxe' : '' || pickaxe == 4 ? 'Diamond pickaxe' : '' || pickaxe == 5 ? 'Netherite pickaxe' : ''}
+╰ *Durability:* ${pdurability}
+🎣 *Fishingrod:* ${pancing == 0 ? '❌' : '' || pancing == 1 ? 'Wooden Fishingrod' : '' || pancing == 2 ? 'Iron Fishingrod' : '' || pancing == 1 ? 'Diamond Fishingrod' : '' || pancing == 1 ? 'Netherite Fishingrod' : '' }
+╰ *Durability:* ${fdurability}
+🏹 *Bow:* Cooming Soon!
+*──────────❏ Kandang ❏──────────*
+🐔 *Ayam:* ${ayam}    
+🐐 *Kambing:* ${kambing}
+🐄 *Sapi:* ${sapi} 
+🐃 *Kerbau:* ${kerbau}
+🐖 *Babi:* ${babi}    
+🐅 *Harimau:* ${harimau}
+🐂 *Banteng:* ${banteng} 
+🐒 *Monyet:* ${monyet}
+🐗 *Babi Hutan:* ${babihutan}
+🐼 *Panda:* ${panda}
+🐘 *Gajah:* ${gajah}
+🐊 *Buaya:* ${buaya}
+🥢 Bisa kamu masak */masak ayamb*
+💬 *Total Hewan:* ${ buaya + gajah + panda + babihutan + monyet + harimau + kerbau + kambing + ayam + sapi + babi + banteng } tangkapan
+*──────────❏ Kolam ❏──────────*
+🐋 *Orca:* ${orca}
+🐳 *Paus:* ${paus}
+🐬 *Lumba:* ${lumba}
+🦈 *Hiu:* ${hiu}
+🐟 *Ikan:* ${ikan}
+🐟 *Lele:* ${lele}
+🐡 *Bawal:* ${bawal}
+🐠 *Nila:* ${nila}
+🦀 *Kepiting:* ${kepiting}
+🦞 *Lobster:* ${lobster}
+🐙 *Gurita:* ${gurita}
+🦑 *Cumi:* ${cumi}
+🦐 *Udang:* ${udang}
+💬 *Total Ikan:* ${orca + udang + hiu + lobster + lumba + cumi + gurita + kepiting + paus + nila + bawal + ikan + lele + psepick + psenjata }
+*──────────❏ Inventory ❏──────────*
+💎 *Diamond:* ${diamond}
+🧪 *Ramuan:* ${ramuan}
+🥤 *Potion:* ${potion}
+🗑️ *Sampah:* ${sampah}
+🥫 *Kaleng:* ${kaleng}
+📦 *Kardus:* ${kardus}
+🪵  *Kayu:* ${kayu}
+🕸️ *String:* ${string}
+🪙  *Gold:* ${emas}
+⛓  *Iron:* ${besi}
+🪨  *Batu:* ${batu}
+🧭 *Arloji:* ${arlok}
+*──────────❏ Food ❏──────────*
+🥓 *FoodPet :* ${makananpet}
+🍖 *ayam bakar:* ${ayamb}
+🍗 *ayam goreng:* ${ayamg}
+🥘 *Rendang Sapi :* ${sapir}
+🥩 *steak sapi:* ${ssapi}
+🍶 *Aqua:* ${aqua}
+🎒 *Total inv:* ${aqua + ramuan + kardus + kaleng + arlok + psepick + psenjata + common + uncommon + mythic + legendary + pet + diamond + potion + besi + emas + string + sampah + kayu + batu + potion + sampah + makananpet + apel + ayamb + ayamg + sapir + ssapi } item
+*──────────❏ Fruit & Seed ❏──────────*
+🥭 *Mangga:* ${mangga}
+🍇 *Anggur:* ${anggur}
+🍌 *Pisang:* ${pisang}
+🍊 *Jeruk:* ${jeruk}
+🍎 *Apel:* ${apel}
+🌾 *Bibit Mangga:* ${bibitmangga}
+🌾 *Bibit Anggur:* ${bibitanggur}                                    
+🌾 *Bibit Pisang:* ${bibitpisang}
+🌾 *Bibit Jeruk:* ${bibitjeruk}
+🌾 *Bibit Apel:* ${bibitapel}
+*──────────❏ Crate ❏──────────*
+📦 *Common:* ${common}
+🛍️ *Uncommon:* ${uncommon}
+🎁 *Mythic:* ${mythic}
+🧰 *Legendary:* ${legendary}
+📫 *Pet:* ${pet}
+*──────────❏ Pet ❏──────────*
+🐴 *Kuda:* ${kuda == 0 ? '❌' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level MAX' : ''}
+🦊 *Rubah:* ${rubah == 0 ? '❌' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level MAX' : ''}
+🐱 *Kucing:* ${kucing == 0 ? '❌' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level MAX' : ''}
+🐉 *Naga:* ${naga == 0 ? '❌' : '' || naga == 1 ? 'Level 1' : '' || naga == 2 ? 'Level 2' : '' || naga == 3 ? 'Level 3' : '' || naga == 4 ? 'Level 4' : '' || naga == 5 ? 'Level MAX' : ''}
+🦜 *Phonix:* ${phonix == 0 ? '❌' : '' || phonix == 1 ? 'Level 1' : '' || phonix == 2 ? 'Level 2' : '' || phonix == 3 ? 'Level 3' : '' || phonix == 4 ? 'Level 4' : '' || phonix == 5 ? 'Level MAX' : ''}
+🐎 *Centaur:* ${centaur == 0 ? '❌' : '' || centaur == 1 ? 'Level 1' : '' || centaur == 2 ? 'Level 2' : '' || centaur == 3 ? 'Level 3' : '' || centaur == 4 ? 'Level 4' : '' || centaur == 5 ? 'Level MAX' : ''}
+🦅 *Griffin:* ${griffin == 0 ? '❌' : '' || griffin == 1 ? 'Level 1' : '' || griffin == 2 ? 'Level 2' : '' || griffin == 3 ? 'Level 3' : '' || griffin == 4 ? 'Level 4' : '' || griffin == 5 ? 'Level MAX' : ''}
+🐺 *Serigala:* ${serigala == 0 ? '❌' : '' || serigala == 1 ? 'Level 1' : '' || serigala == 2 ? 'Level 2' : '' || serigala == 3 ? 'Level 3' : '' || naga == 4 ? 'Level 4' : '' || serigala == 5 ? 'Level MAX' : ''}
+*──────────❏ Progses ❏──────────*
+╭────────────────
+│ 📊 *Level:* ${level} ➠  ${level + 1}
+│ ✨ *Exp:* ${exp} ➠ ${max}
+╰────────────────
+╭────────────────
+│🦊 *Rubah :* ${rubah == 0 ? '❌' : '' || rubah > 0 && rubah < 5 ? `Level *${rubah}* ➠ *${rubah + 1}*\n│Exp *${_rubah}* -> *${rubah *100}*` : '' || rubah == 5 ? '*Max Level*' : ''}
+╰────────────────
+╭────────────────
+│🐱 *Kucing :* ${kucing == 0 ? '❌' : '' || kucing > 0 && kucing < 5 ? `Level *${kucing}* ➠ *${kucing + 1}*\n│Exp *${_kucing}* -> *${kucing *100}*` : '' || kucing == 5 ? '*Max Level*' : ''}
+╰────────────────
+╭────────────────
+│🐴 *Kuda :* ${kuda == 0 ? '❌' : '' || kuda > 0 && kuda < 5 ? `Level *${kuda}* ➠ *${kuda + 1}*\n│Exp *${_kuda}* -> *${kuda *100}*` : '' || kuda == 5 ? '*Max Level*' : ''}
+╰────────────────
+╭────────────────
+│🐉 *Naga :* ${naga == 0 ? '❌' : '' || naga > 0 && naga < 5 ? `Level *${naga}* ➠ *${naga + 1}*\n│Exp *${_naga}* -> *${naga *100}*` : '' || naga == 5 ? '*Max Level*' : ''}
+╰────────────────
+╭────────────────
+│🦜 *Phonix :* ${phonix == 0 ? '❌' : '' || phonix > 0 && phonix < 5 ? `Level *${phonix}* ➠ *${phonix + 1}*\n│Exp *${_phonix}* -> *${phonix *100}*` : '' || phonix == 5 ? '*Max Level*' : ''}
+╰────────────────
+╭────────────────
+│🐎 *Centaur :* ${centaur == 0 ? '❌' : '' || centaur > 0 && centaur < 5 ? `Level *${centaur}* ➠ *${centaur + 1}*\n│Exp *${_cetaur}* -> *${centaur *100}*` : '' || centaur == 5 ? '*Max Level*' : ''}
+╰────────────────
+╭────────────────
+│🦅 *Griffin :* ${griffin == 0 ? '❌' : '' || griffin > 0 && griffin < 5 ? `Level *${griffin}* ➠ *${griffin + 1}*\n│Exp *${_griffin}* -> *${griffin *100}*` : '' || griffin == 5 ? '*Max Level*' : ''}
+╰────────────────
+╭────────────────
+│🐺 *Serigala :* ${serigala == 0 ? '❌' : '' || serigala > 0 && serigala < 5 ? `Level *${serigala}* ➠ *${serigala + 1}*\n│Exp *${_serigala}* -> *${serigala *100}*` : '' || serigala == 5 ? '*Max Level*' : ''}
+╰────────────────
+*──────────❏ Cooldown ❏──────────*
+*🏹 Berburu :* ${lastberburu > 0 ? '❌' : '✅'}
+*⛰️ Adventure :* ${lastadventure > 0 ? '❌' : '✅'}
+*⚔️ Duel :* ${lastduel > 0 ? '❌' : '✅'}
+*🛡️ War :* ${lastwar > 0 ? '❌'  : '✅'}
+*🎃 Dungeon :* ${lastdungeon > 0 ? '❌' : '✅'}
+*💱 Berdagang :* ${lastdagang > 0 ? '❌'  : '✅'}
+*🧺 Berkebun :* ${lastberkebon > 0 ? '❌'  : '✅'}
+*⛏️ Mining :* ${lastmining > 0 ? '❌' : '✅'}
+*🎣 Fishing :* ${lastfishing > 0 ? '❌'  : '✅'}
+*💰 Bansos :* ${lastbansos > 0 ? '❌' : '✅'}
+*🕐 Hourly :* ${lasthourly > 0 ? '❌' : '✅'}
+*📦 Claim :* ${lastclaim > 0 ? '❌' : '✅'}
+*🎁 Weekly :* ${lastweekly > 0 ? '❌' : '✅'}
+*📮 Monthly :* ${lastmonthly > 0 ? '❌' : '✅'}
+*──────────❏ Achievement ❏──────────*
+📊 *Top level:* ${userslevel.indexOf(m.sender) + 1} / ${userslevel.length}
+💹 *Top Money:* ${usersmoney.indexOf(m.sender) + 1} / ${usersmoney.length}
+🪙  *Top Gold:* ${usersgold.indexOf(m.sender) + 1} / ${usersgold.length}
+💎 *Top Diamond:* ${usersdiamond.indexOf(m.sender) + 1} / ${usersdiamond.length}
+🧭 *Top Arloji:* ${usersarlok.indexOf(m.sender) + 1} / ${usersarlok.length}
+🥤 *Top Potion:* ${userspotion.indexOf(m.sender) + 1} / ${userspotion.length}
+📦 *Top Common:* ${userscommon.indexOf(m.sender) + 1} / ${userscommon.length}
+🛍️ *Top Uncommon:* ${usersuncommon.indexOf(m.sender) + 1} / ${usersuncommon.length}
+🎁 *Top Mythic:* ${usersmythic.indexOf(m.sender) + 1} / ${usersmythic.length}
+🧰 *Top Legendary:* ${userslegendary.indexOf(m.sender) + 1} / ${userslegendary.length}
+🗑️ *Top Sampah:* ${userssampah.indexOf(m.sender) + 1} / ${userssampah.length}
+`
+    itsu.send2Button(m.chat, str, global.botdate, `${healt < 40 ? 'Heal' : 'Adventure'}`, `${healt < 40 ? '.heal' : '.adventure'}`, 'Shop', '.shop', ftrol)
 }
 handler.help = ['inventory', 'inv']
 handler.tags = ['rpg']
@@ -361,4 +333,4 @@ module.exports = handler
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4201)
 
-let wm = global.wm
+let wm = global.botwm
