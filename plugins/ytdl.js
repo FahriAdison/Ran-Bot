@@ -35,7 +35,7 @@ await itsu.relayWAMessage(itsu.prepareMessageFromContent(m.chat, {
                                         "rowId": `${usedPrefix}dlvid ${args[0]} 480`
                                     }, {
                                         "title": `720p`,
-"description": '```Sedang dalam perbaikan ❕```', 
+"description": title, 
                                         "rowId": `${usedPrefix}dlvid ${args[0]} 720`                               
                                     }, { 
                                         "title": `1080p`,
@@ -52,7 +52,7 @@ await itsu.relayWAMessage(itsu.prepareMessageFromContent(m.chat, {
                  }, {quoted: m}),{waitForAck: true}
 )
 }
-handler.help = ['ytdl ']
+handler.help = ['ytmp3', 'ytmp4', 'yta', 'ytv']
 handler.tags = ['downloader']
 handler.command = /^ytdl$/i
 
