@@ -23,9 +23,9 @@ let tag = `@${m.sender.split('@')[0]} 🐦`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
  let pat1 = `@${'0'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let pat2 = `@${'6283801499848'.split('@')[0]}`
+ let pat2 = `@${'13062221260'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
- let pat3 = `@${'31687221333'.split('@')[0]}`
+ let pat3 = `@${'436506665652696'.split('@')[0]}`
  m, { contextInfo: { mentionedJid: itsu.parseMention(tag) }}
 let uwu = global.thumb
 let jam = new Date
@@ -214,6 +214,7 @@ const anu = {
  User: %totalreg
 - Tukang Banned : ${pat1}
 - Creator : ${ow}
+- Rlxfly: ${pat2}, ${pat3}
 %readmore`
     let header = itsu.menu.header || ` ${moe} ┉┄┈┈┈ 『  %category  』 ┉┄┈┈┈ ` 
     let body   = itsu.menu.body   || '➠ %cmd%islimit'
@@ -260,7 +261,7 @@ const buttonsMessage = {
     buttons: buttons,
     headerType: 4,
 imageMessage: msg.message.imageMessage, thumbnail: global.thumb}
-const sendMsg = await itsu.prepareMessageFromContent(m.chat,{buttonsMessage}, {quoted: anu,  thumbnail: pp, contextInfo: { mentionedJid: itsu.parseMention(text), externalAdReply: { title: `${ucapWaktu}`, body: `Time: ${clock}\nRuntime: ${Rtime}`, mediaUrl: tod, mediaType: 2, thumbnail: await (await fetch(pp)).buffer()}}})
+const sendMsg = await itsu.prepareMessageFromContent(m.chat,{buttonsMessage}, {quoted: anu,  thumbnail: pp, contextInfo: { mentionedJid: itsu.parseMention(text), externalAdReply: { title: `${ucapWaktu}`, body: `Time: ${clock}\n`, mediaUrl: tod, mediaType: 2, thumbnail: await (await fetch(pp)).buffer()}}})
 itsu.relayWAMessage(sendMsg)
 }
 
