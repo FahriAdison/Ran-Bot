@@ -5,7 +5,7 @@ const { join } = require('path')
 
 let confirmation = {}
 let repository = 'FahriAdison/Ran-Bot'
-let branch = 'master'
+let branch = 'main'
 
 async function handler(m, { text, args }) {
   if (!args || !args[0]) throw `lah`
