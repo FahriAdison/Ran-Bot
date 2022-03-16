@@ -755,6 +755,8 @@ global.dfail = (type, m, itsu) => {
 	let botdate = global.botdate
 	let syappa = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? itsu.user.jid : m.sender
 	let namae = itsu.getName(syappa)
+  let tag = `@${m.sender.split('@')[0]}`
+let fot = `Made by @${'17608914335'.split('@')[0]}`
   let owr = {
     rowner: 'https://telegra.ph/file/2848948d64ea43302c882.png'
   }[type]
@@ -804,23 +806,23 @@ Yuk Daftar Dulu Karena Anda Belum Terdaftar Dalam Database Bot
                             {
                                 "rows": [{
                                          "title": `MY OWNER`,
-                                         "description": "List Owner Kanna BOT",
-                                         "rowId": ".nowner"
+                                         "description": "Owner Ran",
+                                         "rowId": ".owner"
                                     }, {
                                          "title": `ABOUT`,
-                                         "description": " Tentang Kanna BOT", 
-                                         "rowId": ".info"
+                                         "description": " Tentang Owner", 
+                                         "rowId": ".about"
                                     }, {
                                          "title": `LIST MENU`,
-                                         "description": " List Menu Kanna BOT",
+                                         "description": " List Menu Bot",
                                          "rowId": ".menu"
                                     }, {
                                          "title": `SCRIPT`,
-                                         "description": " Source code Kanna BOT",
+                                         "description": " Source code",
                                          "rowId": ".sc"
                                          }, {
                                          "title": `GROUP BOT`,
-                                         "description": " List Group Official Kanna BOT",
+                                         "description": " List Group Official Bot",
                                          "rowId": ".gcbot"
                        }],
                     "title": "Ran_2022"
