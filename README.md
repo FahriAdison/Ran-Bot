@@ -31,7 +31,9 @@ Simple WhatsApp Bot
 
 ------------
 ## <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/hmm.gif" width="29px"> Installation
-Download Modules Here https://drive.google.com/file/d/1NLJynfQiJln3wRno2KRs-zaK6GjWRQvj/view?usp=sharing
+Download Modules
+[Here](https://drive.google.com/file/d/1NLJynfQiJln3wRno2KRs-zaK6GjWRQvj/view?usp=sharing)
+
 --------
 ## NOTE: 
 ```bash
