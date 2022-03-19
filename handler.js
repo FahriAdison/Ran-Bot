@@ -690,17 +690,45 @@ this.updatePresence(m.chat, Presence.composing)
         if (chat.welcome) {
           let groupMetadata = await this.groupMetadata(jid)
           for (let user of participants) {
-            let pp = 'https://telegra.ph/file/fc5e41b96c7a809b150c1.png'
+             let pp = './src/avatar_contact.png'
             try {
               pp = await this.getProfilePicture(user)
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || itsu.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
-                (chat.sBye || this.bye || itsu.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-              this.sendMessage(jid, text , 'conversation', {quoted: null, thumbnail: global.thumb, contextInfo: {
-                  mentionedJid: [user], externalAdReply: {title: 'Welcome Message', body: `© ${this.user.name}`, sourceUrl: '', thumbnail: await (await fetch(pp)).buffer()}
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || itsu.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                (chat.sBye || this.bye || itsu.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+              let img = await (await fetch('https://telegra.ph/file/49a4c781ad1937399dee1.jpg')).buffer()
+
+              let wel = fs.readFileSync('./thumb/images (2).jpeg')
+
+              let lea = fs.readFileSync('./thumb/images (4).jpeg')
+             
+               /*itsu.sendButtonImg(jid, pp, text, wm, 'LIST MENU', '#menu', false, {
+                contextInfo: {
+                  mentionedJid: [user]
                 }
-              })
+              })*/
+
+await itsu.sendMessage(jid, { "contentText": text, "footerText": wm,
+"buttons": [
+{buttonId: '.menu', buttonText: {displayText: 'Menu'}, type: 1},
+{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},
+{buttonId: '.infoowner', buttonText: {displayText: 'Biodata Owner'}, type: 1}
+],
+"headerType": "DOCUMENT", "documentMessage": {
+            "url": "https://mmg.whatsapp.net/d/f/AsO5KpESy9E0WI72xEVp65rx505bQxvuIma79L8Ue076.enc",
+            "mimetype": "application/pdf",
+            "title": "ness.pdf",
+            "fileSha256": "8Xfe3NQDhjwVjR54tkkShLDGrIFKR9QT5EsthPyxDCI=",
+            "fileLength": "99999999999999",
+            "pageCount": 100,
+            "mediaKey": "XWv4hcnpGY51qEVSO9+e+q6LYqPR3DbtT4iqS9yKhkI=",
+            "fileName": wm,
+            "fileEncSha256": "NI9ykWUcXKquea4BmH7GgzhMb3pAeqqwE+MTFbH/Wk8=",
+            "directPath": "/v/t62.7118-24/35150115_287008086621545_8250021012380583765_n.enc?ccb=11-4&oh=6f0f730e5224c054969c276a6276a920&oe=61A21F46",
+            "mediaKeyTimestamp": "1634472176",
+            "jpegThumbnail": action === 'add' ? wel : lea,
+  }}, 'buttonsMessage', { quoted: false, contextInfo: { mentionedJid: [user], forwardingScore: 999, isForwarded: true, externalAdReply: { title: wm, body: 'Ran_2022', description: ' Recode By Papah', mediaType: 2, thumbnail: img, mediaUrl: `https://youtu.be/W7AygtSnynQ`}}})
             }
           }
         }
