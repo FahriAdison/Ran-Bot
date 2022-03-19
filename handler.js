@@ -697,7 +697,7 @@ this.updatePresence(m.chat, Presence.composing)
             } finally {
               text = (action === 'add' ? (chat.sWelcome || this.welcome || itsu.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
                 (chat.sBye || this.bye || itsu.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
-              let img = await (await fetch('https://telegra.ph/file/49a4c781ad1937399dee1.jpg')).buffer()
+              let img = await (await fetch('https://i.bandori.party/u/c/art/a/1599Ran-Mitake-Happy-yEuzgE.png')).buffer()
 
               let wel = fs.readFileSync('./thumb/images (2).jpeg')
 
