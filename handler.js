@@ -713,7 +713,6 @@ await itsu.sendMessage(jid, { "contentText": text, "footerText": wm,
 "buttons": [
 {buttonId: '.menu', buttonText: {displayText: 'Menu'}, type: 1},
 {buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},
-{buttonId: '.infoowner', buttonText: {displayText: 'Biodata Owner'}, type: 1}
 ],
 "headerType": "DOCUMENT", "documentMessage": {
             "url": "https://mmg.whatsapp.net/d/f/AsO5KpESy9E0WI72xEVp65rx505bQxvuIma79L8Ue076.enc",
