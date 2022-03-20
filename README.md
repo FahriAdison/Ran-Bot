@@ -14,7 +14,7 @@ Simple WhatsApp Bot
 
 ### Preview bot
 ------------------
-- [x] Welcome Image <details><summary>Screenshot</summary><img src="https://telegra.ph/file/dbc40b7a940562ff9ceb6.jpg"></details>
+- [x] Welcome Image <details><summary>Screenshot</summary><img src="https://telegra.ph/file/541dc53d89235e631aca8.jpgdetails>
 - [x] Reply bot <details><summary>Screenshot</summary><img src="https://telegra.ph/file/5b9c2412463a914af2255.jpg"></details>
 - [x] Menu 1 <details><summary>Screenshot</summary><img src="https://telegra.ph/file/4f06b4d071180b168a324.jpg"></details>
 - [x] Menu 2 <details><summary>Screenshot</summary><img src="https://telegra.ph/file/153200888eea7c4173133.jpg"></details>
