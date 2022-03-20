@@ -1,3 +1,5 @@
+let fs = require('fs')
+const thumb = fs.readFileSync('./src/elaina2.jpeg')
 let { MessageType } = require('@adiwajshing/baileys')
 const potion = 500
 const Sgold = 3000
@@ -680,7 +682,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             }
                             break
             default:
-                return itsu.sendButton(m.chat, Kchat,wm, 'Inventory', '.inv', m)
+                return itsu.sendButtonLoc(m.chat, thumb, Kchat,wm, 'Inventory', '.inv', m)
             }
         } else if (/beli|buy/i.test(command)) {
             const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)

@@ -309,7 +309,7 @@ let handler  = async (m, { itsu, command, args, usedPrefix, DevMode }) => {
                 }
                 break
             default:
-                return itsu.reply(m.chat, Kchat, m)
+                return itsu.sendButton(m.chat, Kchat, wm, 'Kolam', '#kolam', m)
             }
       /*  } else if (/beli|buy/i.test(command)) {
             const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)

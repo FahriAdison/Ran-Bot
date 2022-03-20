@@ -1,4 +1,6 @@
 let { MessageType } = require('@adiwajshing/baileys')
+let fs = require('fs')
+const thumb = fs.readFileSync('./src/elaina2.jpeg')
 let handler = async (m, { itsu }) => {
 
 let name = global.DATABASE.data.users[m.sender].name
@@ -16,6 +18,9 @@ let hiu = global.DATABASE.data.users[m.sender].hiu
 let udang = global.DATABASE.data.users[m.sender].udang
 let ikan = global.DATABASE.data.users[m.sender].ikan
 let orca = global.DATABASE.data.users[m.sender].orca
+let nila = global.DATABASE.data.users[m.sender].nila
+let bawal = global.DATABASE.data.users[m.sender].bawal
+let lele = global.DATABASE.data.users[m.sender].lele
 let past = `*《 ISI KOLAM 》*
   
 Kolam: *${name}*
@@ -36,8 +41,10 @@ Exp: *${exp}*
 🦐 Udang: *${udang}*
 🐟 Ikan: *${ikan}*
 🐋 Orca: *${orca}*
-
-🎏 Total Isi: *${paus + kepiting + gurita + cumi + buntal + dory + lumba + lobster + hiu + udang + ikan + orca}* Jenis`
+🐟 Lele: *${lele}*
+🐠 Nila: *${nila}*
+🐡 Bawal: *${bawal}*
+🎏 Total Isi: *${bawal + nila + lele + paus + kepiting + gurita + cumi + buntal + dory + lumba + lobster + hiu + udang + ikan + orca}* Jenis`
 let isi = ` *🦀Kepiting = ${kepiting}*
 *🐠Dory = ${dory}*
 *🦞Lobster = ${lobster}*
@@ -49,8 +56,11 @@ let isi = ` *🦀Kepiting = ${kepiting}*
 *🐙Gurita = ${gurita}*
 *🦈Hiu = ${hiu}*
 *🐡Buntal = ${buntal}*
-*🐳Orca = ${orca}*`.trim()
-  itsu.senDATABASEutton(m.chat, past, 'Yuta-Botz', 'FISH SHOP', '#tokoikan', m)
+*🐳Orca = ${orca}*
+🐟 Lele: *${lele}*
+🐠 Nila: *${nila}*
+🐡 Bawal: *${bawal}*`.trim()
+  itsu.sendButtonLoc(m.chat, thumb, past, wm, 'Pasar', '#pasar', m)
   }
   handler.help = ['kotakikan', 'kolam', 'kolamikan']
   handler.tags = ['rpg']
