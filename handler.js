@@ -701,8 +701,8 @@ this.updatePresence(m.chat, Presence.composing)
               ppgc = await this.getProfilePicture(jid)
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                (chat.sBye || this.bye || conn.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || itsu.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                (chat.sBye || this.bye || itsu.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
               let wel = await new knights.Welcome()
                 .setUsername(this.getName(user))
                 .setGuildName(this.getName(jid))
