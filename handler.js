@@ -25,7 +25,7 @@ module.exports = {
       }
       m.exp = 0
       m.limit = false
-this.updatePresence(m.chat, Presence.composing)
+this.updatePresence(m.chat, 'recording')
       try {
         let user = global.DATABASE.data.users[m.sender]
         if (typeof user !== 'object') global.DATABASE.data.users[m.sender] = {}
