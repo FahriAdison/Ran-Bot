@@ -5,10 +5,14 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/FahriAdison/Ran-Bot"><img title="Followers" src="https://img.shields.io/github/followers/FahriAdison?color=blue&style=flat-square"></a>
-<a href="https://github.com/FahriAdison/Ran-Bot"><img title="Stars" src="https://img.shields.io/github/stars/FahriAdison/Ran-Bot?color=red&style=flat-square"></a>
-<a href="https://github.com/FahriAdison/Ran-Bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/FahriAdison/Ran-Bot?color=red&style=flat-square"></a>
-<a href="https://github.com/FahriAdison/Ran-Botwatchers"><img title="Watching" src="https://img.shields.io/github/watchers/FahriAdison/Ran-Bot?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/FahriAdison/Ran-Bot?label=Forks&color=blue&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/FahriAdison/Ran-Bot?label=Watchers&color=green&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/FahriAdison/Ran-Bot?label=Stars&color=yellow&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/FahriAdison/Ran-Bot?label=Contributors&color=blue&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/issues"><img title="Issues" src="https://img.shields.io/github/issues/FahriAdison/Ran-Bot?label=Issues&color=success&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/FahriAdison/Ran-Bot?label=Issues&color=red&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/FahriAdison/Ran-Bot?label=PullRequest&color=success&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/FahriAdison/Ran-Bot?label=PullRequest&color=red&style=flat-square"></a>
 </p>
 
 # RECODE WABOT-AQ
