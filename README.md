@@ -4,6 +4,13 @@
     <a href="https://github.com/FahriAdison"><img title="Created by" src="https://img.shields.io/badge/Recode-Yuta-magenta?style=for-the-badge&logo=github"></a>
 </p>
 
+<p align="center">
+<a href="https://github.com/FahriAdison/Ran-Bot"><img title="Followers" src="https://img.shields.io/github/followers/FahriAdison?color=blue&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot"><img title="Stars" src="https://img.shields.io/github/stars/FahriAdison/Ran-Bot?color=red&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/FahriAdison/Ran-Bot?color=red&style=flat-square"></a>
+<a href="https://github.com/FahriAdison/Ran-Botwatchers"><img title="Watching" src="https://img.shields.io/github/watchers/FahriAdison/Ran-Bot?label=Watchers&color=blue&style=flat-square"></a>
+</p>
+
 # RECODE WABOT-AQ
 
 Simple WhatsApp Bot
