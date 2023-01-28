@@ -5,8 +5,8 @@ let handler = async (m, { itsu, participants }) => {
   // } else m.reply('Ada nomor host disini...')
 }
 handler.help = ['unbanchat']
-handler.tags = ['owner']
+handler.tags = ['user']
 handler.command = /^unbanchat$/i
-handler.owner,handler.mods = true
+handler.user,handler.mods = true
 
 module.exports = handler
